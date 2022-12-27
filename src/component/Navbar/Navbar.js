@@ -11,12 +11,12 @@ const Navbar = () => {
                     <Link
                         to='/'
                         aria-label='Dentist'
-                        title='Dentist'
+
                         className='inline-flex items-center'
                     >
                         {/* <img className='w-10' src={logo} alt="" /> */}
                         <span className='ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase'>
-                            Dentist
+                            social media
                         </span>
                     </Link>
                     <ul className='items-center hidden space-x-8 lg:flex'>
@@ -33,45 +33,36 @@ const Navbar = () => {
 
                         <li>
                             <Link
-                                to='/allService'
-                                aria-label='services'
-                                title='services'
+                                to='/aboute'
+                                aria-label='aboute'
+                                title=' Aboute Us'
                                 className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
                             >
-                                Services
+                                Aboute Us
                             </Link>
                         </li>
                         <li>
                             <Link
-                                to='/addService'
-                                aria-label='services'
-                                title='Add Services'
+                                to='/Media'
+                                aria-label='Media'
+                                title='Media'
                                 className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
                             >
-                                Add Services
+                                Media
                             </Link>
                         </li>
 
                         <li>
                             <Link
-                                to='/reviue'
-                                title=' My Reviews'
+                                to='/message'
+                                title=' Message'
                                 className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
                             >
-                                My Reviews
+                                Message
                             </Link>
                         </li>
 
-                        <li>
-                            <Link
-                                to='/gallery'
-                                aria-label='gallery'
-                                title='Gallery'
-                                className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
-                            >
-                                Gallery
-                            </Link>
-                        </li>
+
                         <li>
                             <Link
                                 to='/blog'
@@ -133,7 +124,7 @@ const Navbar = () => {
                                                     <path d='M18.266 26.068l7.839-7.854 4.469 4.479c1.859 1.859 1.859 4.875 0 6.734l-1.104 1.104c-1.859 1.865-4.875 1.865-6.734 0zM30.563 2.531l-1.109-1.104c-1.859-1.859-4.875-1.859-6.734 0l-6.719 6.734-6.734-6.734c-1.859-1.859-4.875-1.859-6.734 0l-1.104 1.104c-1.859 1.859-1.859 4.875 0 6.734l6.734 6.734-6.734 6.734c-1.859 1.859-1.859 4.875 0 6.734l1.104 1.104c1.859 1.859 4.875 1.859 6.734 0l21.307-21.307c1.859-1.859 1.859-4.875 0-6.734z'></path>
                                                 </svg>
                                                 <span className='ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase'>
-                                                    Dentist
+                                                    Social Media
                                                 </span>
                                             </Link>
                                         </div>
@@ -168,46 +159,37 @@ const Navbar = () => {
                                             </li>
 
 
-                                                        <li>
-                                                            <Link
-                                                                to='/allService'
-                                                                aria-label='services'
-                                                                title='services'
-                                                                className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
-                                                            >
-                                                                Services
-                                                            </Link>
-                                                        </li>
-                                                        <li>
-                                                            <Link
-                                                                to='/addService'
-                                                                aria-label='services'
-                                                                title='Add Services'
-                                                                className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
-                                                            >
-                                                                Add Services
-                                                            </Link>
-                                                        </li>
-
-                                                        <li>
-                                                            <Link
-                                                                to='/reviue'
-                                                                title=' My Reviews'
-                                                                className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
-                                                            >
-                                                                My Reviews
-                                                            </Link>
-                                                        </li>
-                                      <li>
+                                            <li>
                                                 <Link
-                                                    to='/gallery'
-                                                    aria-label='gallery'
-                                                    title='Gallery'
+                                                    to='/aboute'
+                                                    aria-label='services'
+                                                    title='Aboute Us'
                                                     className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
                                                 >
-                                                    Gallery
+                                                    Aboute Us
                                                 </Link>
                                             </li>
+                                            <li>
+                                                <Link
+                                                    to='/media'
+                                                    aria-label='services'
+                                                    title='Media'
+                                                    className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
+                                                >
+                                                    Media
+                                                </Link>
+                                            </li>
+
+                                            <li>
+                                                <Link
+                                                    to='/message'
+                                                    title=' Message'
+                                                    className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
+                                                >
+                                                    Message
+                                                </Link>
+                                            </li>
+
                                             <li>
                                                 <Link
                                                     to='/blog'
@@ -219,12 +201,12 @@ const Navbar = () => {
                                                 </Link>
                                             </li>
 
-                                     
 
-                                                        {/* <button className='btn bg-indigo-600 border-0'> <Link to='/login'> Login</Link> </button>
+
+                                            {/* <button className='btn bg-indigo-600 border-0'> <Link to='/login'> Login</Link> </button>
                                             
                                              <button onClick={handlerLogOut} className="btn bg-blue-600 border-0 text-white"> <Link to='/'> Log Out</Link> </button> */}
-                                         
+
 
                                         </ul>
                                     </nav>
