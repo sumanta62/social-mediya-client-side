@@ -22,7 +22,7 @@ const Navbar = () => {
                     <ul className='items-center hidden space-x-8 lg:flex'>
                         <li>
                             <Link
-                                to='/home'
+                                to='/'
                                 aria-label='Home'
                                 title='Home'
                                 className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
@@ -43,7 +43,7 @@ const Navbar = () => {
                         </li>
                         <li>
                             <Link
-                                to='/Media'
+                                to='/media'
                                 aria-label='Media'
                                 title='Media'
                                 className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
@@ -74,9 +74,7 @@ const Navbar = () => {
                             </Link>
                         </li>
 
-
-
-                        {/* <button className="px-6 py-2 text-sm  font-semibold rounded bg-gradient-to-r from-green-400 to-blue-400 text-gray-800 "> <Link to='/login'> Login</Link> </button> */}
+                        <button className="px-6 py-2 text-sm  font-semibold rounded bg-gradient-to-r from-green-400 to-blue-400 text-gray-800 "> <Link to='/login'> Login</Link> </button>
 
 
                         {/* <button onClick={handlerLogOut} className="px-6 py-2 text-sm  font-semibold rounded bg-gradient-to-r from-green-400 to-blue-400 text-gray-900 " > <Link to='/'> Log Out</Link> </button> */}
