@@ -10,7 +10,7 @@ const PostDataDisplay = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [medias, setMedia] = useState([]);
     const [likeClick, setLikeClick] = useState(false);
-    console.log(likeClick)
+
 
     useEffect(() => {
         fetch(`http://localhost:5000/inputFild`)
@@ -30,7 +30,7 @@ const PostDataDisplay = () => {
     return (
         <div className=' '>
             {
-                medias.map(media =>
+                medias.map((media, i) =>
                     <div className='max-w-lg m-auto'>
                         <div className="flex flex-col  p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
                             <div className="flex space-x-4">

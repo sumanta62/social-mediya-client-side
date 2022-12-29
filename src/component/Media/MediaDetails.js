@@ -6,11 +6,17 @@ import { FiSend } from 'react-icons/fi';
 import { GiLoveMystery } from 'react-icons/gi';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../context/AuthProvider';
+import Spinner from '../Spinner/Spinner';
 
 const MediaDetails = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const mediaDetails = useLoaderData();
-    const { user } = useContext(AuthContext);
+    const { user, loading } = useContext(AuthContext);
+
+    if(loading){
+        <Spinner></Spinner>
+    }
+
 
     const handelLogin = data => {
         console.log(data)
@@ -18,14 +24,7 @@ const MediaDetails = () => {
     }
 
     return (
-
-
         <div className='my-12'>
-            {!user?.uid ?
-                <>
-                    <h1 className='text-lg md:text-2xl font-semibold'>Please Login!</h1>
-                </>
-                :
                 <div className='max-w-lg m-auto'>
                     <div className="flex flex-col  p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
                         <div className="flex space-x-4">
@@ -96,7 +95,6 @@ const MediaDetails = () => {
                         </div>
                     </div>
                 </div>
-            }
         </div>
     );
 };

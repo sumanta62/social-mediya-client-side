@@ -1,69 +1,64 @@
-
 [
-    {
-      "categary_id":"01",
-      "name": "Sojib Khan",
-      "job": "Andriod Developer",
-      "message": "Each of the eight gates of Paradise has two gates. The Prophet (peace and blessings of Allaah be upon him) clearly stated how wide the space between the two sides is. The Prophet (peace and blessings of Allaah be upon him) said in the hadith of Muslim Sharif (194a),  ",
-      "like": "2,000",
-      "comment": "159",
-      "profileImg": "https://media.licdn.com/dms/image/C5603AQH83QSjYUvwyg/profile-displayphoto-shrink_100_100/0/1658122963936?e=1677715200&v=beta&t=xdP6qgh0_ROvXYzI-5FQfl3KS-vUtDfC007cCvzsdzk",
-      "img": "https://media.licdn.com/dms/image/C5622AQFnsMombzOMdQ/feedshare-shrink_2048_1536/0/1671965493855?e=1675296000&v=beta&t=RDJCe0S1E0CtgiGeggXhf5HNVDLR-uK4VZ0-c6kXU_A"
-      
-    },
-    {
-      "categary_id":"02",
-      "name": "Sumit Shaha",
-      "job": "Founder, Learn with Sumit | Co-Founder, Analyzen",
-      "message": "Learn with Sumit VS Code theme has been installed over 50 thousand times so far! Thanks to everyone using the theme in their editors.",
-      "like": "2,500",
-      "comment": "200",
-      "profileImg": "https://media.licdn.com/dms/image/D5603AQG8n09WaJxZFg/profile-displayphoto-shrink_100_100/0/1667673500340?e=1677715200&v=beta&t=GjgK2KN7wHV_4AotGhwZAtVlWeaXx4_9rcd9XicZ3-k",
-      "img": "https://media.licdn.com/dms/image/C5622AQFj52AP59EYJw/feedshare-shrink_800/0/1669637013678?e=1675296000&v=beta&t=S4evMlx98v4y0wlG8uE5k1Mw9e6x78vILjbNbFl8_os"
-      
-    },
-    {
-      "categary_id":"03",
-      "name": "Pradeep Pandey",
-      "job": "Frontend Developer",
-      "message": "Here are 10 CSS generators to save you 15+ hrs every week:",
-      "like": "1,000",
-      "comment": "129",
-      "profileImg": "https://media.licdn.com/dms/image/D4D03AQH7vAfaSK5CAg/profile-displayphoto-shrink_100_100/0/1664257678973?e=1677715200&v=beta&t=4SC3JCee-WGuYb7yGLVgHvDRVT5bZc959c3AfUXt5YU",
-      "img": "https://media.licdn.com/dms/image/C4D22AQGHGjD9LWz64Q/feedshare-shrink_2048_1536/0/1671597994573?e=1675296000&v=beta&t=tVwJHTeqGaw7GPXH1sv3ASbYDcV6rkZbf1imCsHeGwM"
-      
-    },
-    {
-      "categary_id":"04",
-      "name": "Dmitry (Dee) Kolpakov",
-      "job": "Backend Developer",
-      "message": "WHICH YOUR FAVORITE SQL JOIN? W3Schools.com can improve your SQL skill!",
-      "like": "3,000",
-      "comment": "359",
-      "profileImg": "https://media.licdn.com/dms/image/C4D03AQFAd-mjkxexZA/profile-displayphoto-shrink_100_100/0/1644206230306?e=1677715200&v=beta&t=tpejmRbcsSCgM37tolNi_w9qp_Jvczmnce1WrFXJtWo",
-      "img": "https://media.licdn.com/dms/image/C5622AQHMrnZYwX1w3A/feedshare-shrink_800/0/1671775665916?e=1675296000&v=beta&t=5mZTalMOEoeM3oRgd1QoAsJh1GP2S5LpdmH6HPUBy4c"
-      
-    },
-    {
-      "categary_id":"05",
-      "name": "Ali Hossin",
-      "job": "Project Manager",
-      "message": "Are you looking to work Remotely?",
-      "like": "1,500",
-      "comment": "100",
-      "profileImg": "https://media.licdn.com/dms/image/C5603AQEHzhrBjrUM8g/profile-displayphoto-shrink_100_100/0/1662974668586?e=1677715200&v=beta&t=eSNT_SkWMqNQ3S9Ah0JVAnU8wR7d4jDpSDc54kkqXI4",
-      "img": "https://media.licdn.com/dms/image/C5622AQGAd8Kms36Mqg/feedshare-shrink_800/0/1671279764270?e=1675296000&v=beta&t=Xj0uYV4Tm3ZkqdFfFQz6eMLmJq8o72F9kY5DDp9UbLk"
-      
-    },
-    {
-      "categary_id":"06",
-      "name": "Rajjak Ali",
-      "job": "Flutter Developer",
-      "message": "Each of the eight gates of Paradise has two gates. The Prophet (peace and blessings of Allaah be upon him) clearly stated how wide the space between the two sides is. The Prophet (peace and blessings of Allaah be upon him) said in the hadith of Muslim Sharif (194a),  ",
-      "like": "2,000",
-      "comment": "159",
-      "profileImg": "https://media.licdn.com/dms/image/C560BAQF9nk8hs-K_zQ/company-logo_100_100/0/1650091404280?e=1680134400&v=beta&t=bmkQUtLaVZ6jDlaFXUNg-8PLB1njCpK94ZkttQDY4sI",
-      "img": "https://media.licdn.com/dms/image/C5622AQEGoRDG2Dgm2Q/feedshare-shrink_800/0/1672116755896?e=1675296000&v=beta&t=Ce_fyPaajI8lc-aLiC0S-G3uuS7YDoF54n-EeGlDUD0"
-      
-    }
-  ]
+  {
+    "categary_id": "01",
+    "name": "Sojib Khan",
+    "job": "Andriod Developer",
+    "message": "Each of the eight gates of Paradise has two gates. The Prophet (peace and blessings of Allaah be upon him) clearly stated how wide the space between the two sides is. The Prophet (peace and blessings of Allaah be upon him) said in the hadith of Muslim Sharif (194a),  ",
+    "like": "2,000",
+    "comment": "159",
+    "profileImg": "https://media.licdn.com/dms/image/C5603AQH83QSjYUvwyg/profile-displayphoto-shrink_100_100/0/1658122963936?e=1677715200&v=beta&t=xdP6qgh0_ROvXYzI-5FQfl3KS-vUtDfC007cCvzsdzk",
+    "img": "https://media.licdn.com/dms/image/C5622AQFnsMombzOMdQ/feedshare-shrink_2048_1536/0/1671965493855?e=1675296000&v=beta&t=RDJCe0S1E0CtgiGeggXhf5HNVDLR-uK4VZ0-c6kXU_A"
+  },
+  {
+    "categary_id": "02",
+    "name": "Sumit Shaha",
+    "job": "Founder, Learn with Sumit | Co-Founder, Analyzen",
+    "message": "Learn with Sumit VS Code theme has been installed over 50 thousand times so far! Thanks to everyone using the theme in their editors.",
+    "like": "2,500",
+    "comment": "200",
+    "profileImg": "https://media.licdn.com/dms/image/D5603AQG8n09WaJxZFg/profile-displayphoto-shrink_100_100/0/1667673500340?e=1677715200&v=beta&t=GjgK2KN7wHV_4AotGhwZAtVlWeaXx4_9rcd9XicZ3-k",
+    "img": "https://media.licdn.com/dms/image/C5622AQFj52AP59EYJw/feedshare-shrink_800/0/1669637013678?e=1675296000&v=beta&t=S4evMlx98v4y0wlG8uE5k1Mw9e6x78vILjbNbFl8_os"
+  },
+  {
+    "categary_id": "03",
+    "name": "Pradeep Pandey",
+    "job": "Frontend Developer",
+    "message": "Here are 10 CSS generators to save you 15+ hrs every week:",
+    "like": "1,000",
+    "comment": "129",
+    "profileImg": "https://media.licdn.com/dms/image/D4D03AQH7vAfaSK5CAg/profile-displayphoto-shrink_100_100/0/1664257678973?e=1677715200&v=beta&t=4SC3JCee-WGuYb7yGLVgHvDRVT5bZc959c3AfUXt5YU",
+    "img": "https://media.licdn.com/dms/image/C4D22AQGHGjD9LWz64Q/feedshare-shrink_2048_1536/0/1671597994573?e=1675296000&v=beta&t=tVwJHTeqGaw7GPXH1sv3ASbYDcV6rkZbf1imCsHeGwM"
+  },
+  {
+    "categary_id": "04",
+    "name": "Dmitry (Dee) Kolpakov",
+    "job": "Backend Developer",
+    "message": "WHICH YOUR FAVORITE SQL JOIN? W3Schools.com can improve your SQL skill!",
+    "like": "3,000",
+    "comment": "359",
+    "profileImg": "https://media.licdn.com/dms/image/C4D03AQFAd-mjkxexZA/profile-displayphoto-shrink_100_100/0/1644206230306?e=1677715200&v=beta&t=tpejmRbcsSCgM37tolNi_w9qp_Jvczmnce1WrFXJtWo",
+    "img": "https://media.licdn.com/dms/image/C5622AQHMrnZYwX1w3A/feedshare-shrink_800/0/1671775665916?e=1675296000&v=beta&t=5mZTalMOEoeM3oRgd1QoAsJh1GP2S5LpdmH6HPUBy4c"
+  },
+  {
+    "categary_id": "05",
+    "name": "Ali Hossin",
+    "job": "Project Manager",
+    "message": "Are you looking to work Remotely?",
+    "like": "1,500",
+    "comment": "100",
+    "profileImg": "https://media.licdn.com/dms/image/C5603AQEHzhrBjrUM8g/profile-displayphoto-shrink_100_100/0/1662974668586?e=1677715200&v=beta&t=eSNT_SkWMqNQ3S9Ah0JVAnU8wR7d4jDpSDc54kkqXI4",
+    "img": "https://media.licdn.com/dms/image/C5622AQGAd8Kms36Mqg/feedshare-shrink_800/0/1671279764270?e=1675296000&v=beta&t=Xj0uYV4Tm3ZkqdFfFQz6eMLmJq8o72F9kY5DDp9UbLk"
+  },
+  {
+    "categary_id": "06",
+    "name": "Rajjak Ali",
+    "job": "Flutter Developer",
+    "message": "Each of the eight gates of Paradise has two gates. The Prophet (peace and blessings of Allaah be upon him) clearly stated how wide the space between the two sides is. The Prophet (peace and blessings of Allaah be upon him) said in the hadith of Muslim Sharif (194a),  ",
+    "like": "2,000",
+    "comment": "159",
+    "profileImg": "https://media.licdn.com/dms/image/C560BAQF9nk8hs-K_zQ/company-logo_100_100/0/1650091404280?e=1680134400&v=beta&t=bmkQUtLaVZ6jDlaFXUNg-8PLB1njCpK94ZkttQDY4sI",
+    "img": "https://media.licdn.com/dms/image/C5622AQEGoRDG2Dgm2Q/feedshare-shrink_800/0/1672116755896?e=1675296000&v=beta&t=Ce_fyPaajI8lc-aLiC0S-G3uuS7YDoF54n-EeGlDUD0"
+  }
+]
+
+ 

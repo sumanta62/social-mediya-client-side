@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import Aboute from "../Home/Aboute/Aboute";
+import EditAboute from "../Home/Aboute/EditAboute";
 import Home from "../Home/Home/Home";
 import Main from "../Layout/Main";
 import Media from "../Media/Media";
@@ -38,6 +39,11 @@ export const router = createBrowserRouter([
                 path:'/mediaDetails/:id',
                 element: <MediaDetails></MediaDetails>,
                 loader: ({ params }) => fetch(`http://localhost:5000/mediaDetails/${params.id}`)
+            },
+            {
+                path:'/aboute/:id',
+                element: <EditAboute></EditAboute>,
+               
             },
             
         ]

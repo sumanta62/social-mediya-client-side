@@ -6,18 +6,29 @@ import { FiSend } from 'react-icons/fi';
 import { GiLoveMystery } from 'react-icons/gi';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../context/AuthProvider';
+import Spinner from '../Spinner/Spinner';
 
 const Media = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [medias, setMedia] = useState([]);
-    const { user } = useContext(AuthContext);
+    const { user, loading } = useContext(AuthContext);
+    console.log(user);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
    
+    console.log(isMenuOpen);
+    if(loading){
+        <Spinner></Spinner>
+    }
 
     useEffect(() => {
         fetch(`http://localhost:5000/inputFild`)
             .then(res => res.json())
             .then(data => setMedia(data))
     }, [])
+
+    // if(user.uid){
+    //     setIsMenuOpen(true)
+    // }
 
     const handelLogin = data => {
         console.log(data)
@@ -35,7 +46,7 @@ const Media = () => {
 
                 <div className='mt-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 content-center gap-4 mr-0 ml-0 '>
                     {
-                        medias.map(media =>
+                        medias.map((media, i) =>
 
                             <div className="flex flex-col max-w-sm p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
                                 <div className="flex space-x-4">
@@ -102,8 +113,8 @@ const Media = () => {
                                     </div>
                                 </div>
                                 <div className='flex justify-center mt-5'>
-                                    <Link disabled to={`/mediaDetails/${media._id}`} >
-                                        <button className='btn btn-info btn-sm w-full text-white' disabled={user.email} >Details</button>
+                                    <Link to={`/mediaDetails/${media._id}`} disabled={!isMenuOpen}>
+                                        <button className='btn btn-info btn-sm w-full text-white' >Details</button>
                                     </Link>
 
                                 </div>

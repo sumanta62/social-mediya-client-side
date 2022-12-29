@@ -9,17 +9,18 @@ import registerbg from '../../Images/Banner/social-media-marketing.webp'
 const Register = () => {
      const { register, formState: { errors }, handleSubmit } = useForm();
     const { createUser, googleSignin, updateUser } = useContext(AuthContext);
-    const [signUpError, setSingUpError] = useState("")
+    const [signUpError, setSingUpError] = useState("");
 
     const location = useLocation();
     const navogate = useNavigate();
     const from = location.from?.state.pathname || '/'
 
     const handelSignUp = data => {
+        console.log(data);
         setSingUpError('')
         createUser(data.email, data.password)
             .then(result => {
-                // const user = result.user;
+                handlerUpdateUserProfile(data.name)
                 toast.success("User Create Succesfully");
                 navogate(from, { replace: true })
             })
@@ -38,6 +39,16 @@ const Register = () => {
             .catch(error => {
                 console.error(error.message);
             })
+    }
+
+    const handlerUpdateUserProfile = (name) => {
+        const profile = {
+            name: name,
+        }
+        updateUser(profile)
+            .then(() => { })
+            .catch(error => console.error(error))
+
     }
 
 

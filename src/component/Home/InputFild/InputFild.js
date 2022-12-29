@@ -18,6 +18,7 @@ const InputFild = () => {
 
 
     const handlerAddProduct = data => {
+        console.log(data)
         const image = data.image[0];
         const formData = new FormData();
         formData.append('image', image);
@@ -34,6 +35,7 @@ const InputFild = () => {
                     const product = {
                         description: data.description,
                         images: imgbb.data.url,
+                        profileImg:data.profileImg
                     }
                     fetch(`http://localhost:5000/inputFild`, {
                         method: 'POST',
@@ -64,7 +66,7 @@ const InputFild = () => {
                             <div className="form-control w-full ">
                                 <div className='flex items-center gap-3'>
                                     <label className="">
-                                        <img src="https://media.licdn.com/dms/image/D5603AQEVhd-2WOOZjg/profile-displayphoto-shrink_200_200/0/1668929024867?e=1677715200&v=beta&t=wPpr4Q17jIW3Z93Oq7wGDedYRLjOjYW-kITo8s0B_-Q" alt="" className='w-12 rounded-full' />
+                                        <img src={user?.photoURL ? user?.photoURL : "N/I"} {...register("profileImg" )} alt="" className='w-12 h-12 rounded-full border' />
                                     </label>
                                     <textarea type="text" {...register("description" )} className="input input-bordered w-full "
                                         placeholder='Start Post ' />
