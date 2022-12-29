@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
+import { BiPhotoAlbum, } from "react-icons/bi";
+import { AiFillVideoCamera } from "react-icons/ai";
+import { BsFillCalendar2EventFill } from "react-icons/bs";
+import { RiArticleFill } from "react-icons/ri";
+import PostData from './PostData';
+import { AuthContext } from '../../context/AuthProvider';
+
+import { Link } from 'react-router-dom';
 
 const InputFild = () => {
+    const { user } = useContext(AuthContext);
     const { register, formState: { errors }, handleSubmit } = useForm();
     const imgbbHostKey = process.env.REACT_APP_imgbb_key;
     // const navigate = useNavigate();
@@ -37,7 +45,7 @@ const InputFild = () => {
                         .then(res => res.json())
                         .then(result => {
                             toast.success(`Post added successfully`);
-                            
+
                         })
                 }
 
@@ -45,42 +53,52 @@ const InputFild = () => {
 
     }
 
-    return (
-        <div>
-            <div className='my-16'>
-                <div className='h[800px]  w-5/6 md:w-2/6 m-auto bg-blue-50 p-4 rounded-lg'>
-                    <div>
-                        <h2 className="text-3xl md:text-4xl font-bold text-center">Post Addeded</h2>
-                        <form onSubmit={handleSubmit(handlerAddProduct)}>
 
+
+    return (
+        <div className=''>
+            <div >
+                <div className='shadow-md h[800px]  p-4 rounded-lg'>
+                    <div>
+                        <form onSubmit={handleSubmit(handlerAddProduct)}>
                             <div className="form-control w-full ">
-                                <label className="label">
-                                    <span className="">Description</span>
-                                </label>
-                                <textarea type="text" {...register("description", { required: "description is required" })} className="input input-bordered w-full "
-                                    cols="30" rows="10" placeholder='Description ' />
-                                {errors.description && <p className='text-orange-400'>{errors.description?.message}</p>}
+                                <div className='flex items-center gap-3'>
+                                    <label className="">
+                                        <img src="https://media.licdn.com/dms/image/D5603AQEVhd-2WOOZjg/profile-displayphoto-shrink_200_200/0/1668929024867?e=1677715200&v=beta&t=wPpr4Q17jIW3Z93Oq7wGDedYRLjOjYW-kITo8s0B_-Q" alt="" className='w-12 rounded-full' />
+                                    </label>
+                                    <textarea type="text" {...register("description" )} className="input input-bordered w-full "
+                                        placeholder='Start Post ' />
+                                    {errors.description && <p className='text-orange-400'>{errors.description?.message}</p>}
+                                </div>
                             </div>
                             <div className="form-control w-full ">
                                 <label className="label">
-                                    <span className="">Image</span>
+                                    <BiPhotoAlbum className='text-3xl'></BiPhotoAlbum> <span>Photo</span>
                                 </label>
-                                <input type="file" {...register("image", { required: "image is required" })} className="input input-bordered w-full " placeholder='image' />
+                                <input type="file" {...register("image")} className="p-3 border rounded-lg" placeholder='image' />
                                 {errors.image && <p className='text-orange-400'>{errors.image?.message}</p>}
                             </div>
-
-                            <div className='flex justify-center mt-5'>
-                                <input className='btn btn-info w-full md:w-3/6 text-white' value="Submit" type="submit" />
+                            <div className='mt-3 flex flex-wrap justify-between'>
+                                <p className='flex gap-3 items-center hover:bg-slate-200 p-3 rounded-lg cursor-pointer'> <AiFillVideoCamera className='text-2xl text-yellow-700'></AiFillVideoCamera> <span className='font-bold text-gray-500 text-sm'>Video</span></p>
+                                <p className='flex gap-3 items-center hover:bg-slate-200 p-3 rounded-lg cursor-pointer'> <BsFillCalendar2EventFill className='text-2xl text-orange-600'></BsFillCalendar2EventFill> <span className='font-bold text-gray-500 text-sm'>Event</span></p>
+                                <p className='flex gap-3 items-center hover:bg-slate-200 p-3 rounded-lg cursor-pointer'> <RiArticleFill className='text-2xl text-orange-600'></RiArticleFill> <span className='font-bold text-gray-500 text-sm'>Write article</span></p>
                             </div>
-                            {/* <div>
-                            {
-                                signUpError && <p className='text-orange-400'>{signUpError}</p>
-                            }
-                        </div> */}
-                        </form>
 
+                            {!user?.uid ?
+                                <>
+                                    <Link to="/login" className='text-md font-semibold text-blue-500'>Please Login!</Link>
+                                </>
+                                :
+                                <>
+                                    <div className='flex justify-center mt-5'>
+                                        <input className='btn btn-info w-full text-white' value=" Post" type="submit" />
+                                    </div>
+                                </>
+                            }  
+                        </form>
                     </div>
                 </div>
+            <PostData></PostData>
             </div>
         </div>
     );

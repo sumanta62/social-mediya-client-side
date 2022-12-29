@@ -1,13 +1,26 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../context/AuthProvider';
+import { AiFillLinkedin } from "react-icons/ai";
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { user, logOut } = useContext(AuthContext);
+
+    const handlerLogOut = () => {
+        logOut()
+            .then(() => {
+
+            })
+            .catch(err => console.log(err));
+
+    }
 
     return (
-        <div className='bg-sky-300'>
+        <div className='bg-sky-300  sticky top-0'>
             <div className='px-4 py-2 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8'>
                 <div className='relative flex items-center justify-between'>
+                    <div className='flex items-center gap-3'>
                     <Link
                         to='/'
                         aria-label='Dentist'
@@ -15,10 +28,13 @@ const Navbar = () => {
                         className='inline-flex items-center'
                     >
                         {/* <img className='w-10' src={logo} alt="" /> */}
-                        <span className='ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase'>
-                            social media
+                        <span className='ml-2 text-3xl font-bold tracking-wide text-blue-800 uppercase'>
+                        <AiFillLinkedin/>
                         </span>
                     </Link>
+                    <input type="search" name="Search" placeholder="Search..." className="w-32 py-2 pl-10 text-sm rounded-md sm:w-auto focus:outline-none dark:bg-gray-800 dark:text-gray-100 focus:dark:bg-gray-900" />
+                    </div>
+
                     <ul className='items-center hidden space-x-8 lg:flex'>
                         <li>
                             <Link
@@ -74,10 +90,16 @@ const Navbar = () => {
                             </Link>
                         </li>
 
-                        <button className="px-6 py-2 text-sm  font-semibold rounded bg-gradient-to-r from-green-400 to-blue-400 text-gray-800 "> <Link to='/login'> Login</Link> </button>
+                        {
+                            !user?.uid ?
+                                <>
 
+                                    <button className="px-6 py-2 text-sm  font-semibold rounded bg-gradient-to-r from-green-400 to-blue-400 text-gray-800 "> <Link to='/login'> Login</Link> </button>
+                                </>
+                                :
 
-                        {/* <button onClick={handlerLogOut} className="px-6 py-2 text-sm  font-semibold rounded bg-gradient-to-r from-green-400 to-blue-400 text-gray-900 " > <Link to='/'> Log Out</Link> </button> */}
+                                <button onClick={handlerLogOut} className="px-6 py-2 text-sm  font-semibold rounded bg-gradient-to-r from-green-400 to-blue-400 text-gray-900 " > <Link to='/'> Log Out</Link> </button>
+                        }
 
                     </ul>
                     <div className='lg:hidden'>
@@ -198,14 +220,16 @@ const Navbar = () => {
                                                     Blog
                                                 </Link>
                                             </li>
+                                            {
+                                                !user?.uid ?
+                                                    <>
 
+                                                        <button className="px-6 py-2 text-sm  font-semibold rounded bg-gradient-to-r from-green-400 to-blue-400 text-gray-800 "> <Link to='/login'> Login</Link> </button>
+                                                    </>
+                                                    :
 
-
-                                            {/* <button className='btn bg-indigo-600 border-0'> <Link to='/login'> Login</Link> </button>
-                                            
-                                             <button onClick={handlerLogOut} className="btn bg-blue-600 border-0 text-white"> <Link to='/'> Log Out</Link> </button> */}
-
-
+                                                    <button onClick={handlerLogOut} className="px-6 py-2 text-sm  font-semibold rounded bg-gradient-to-r from-green-400 to-blue-400 text-gray-900 " > <Link to='/'> Log Out</Link> </button>
+                                            }
                                         </ul>
                                     </nav>
                                 </div>

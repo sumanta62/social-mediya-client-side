@@ -1,14 +1,14 @@
 import React from 'react';
-import Aboute from '../Home/Aboute/Aboute';
-import Banner from '../Home/Banner/Banner';
-import InputFild from '../Home/InputFild/InputFild';
+import HomePage from '../Home/Banner/HomePage';
+import PostData from '../Home/PostData/PostDataDisplay';
 
 const Main = () => {
     return (
         <div>
-            <Banner></Banner>
-            <Aboute></Aboute>
-            <InputFild></InputFild>
+            <HomePage></HomePage>
+            {/* <Banner></Banner> */}
+            {/* <Aboute></Aboute> */}
+            {/* <InputFild></InputFild> */}
 
         </div>
     );
