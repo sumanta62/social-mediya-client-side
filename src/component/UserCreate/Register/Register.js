@@ -33,7 +33,7 @@ const Register = () => {
     const handlerGoogleSignin = () => {
         googleSignin()
             .then(result => {
-                toast.success("Login Successfully");
+                toast.success("User Create Successfully");
                 navogate(from, { replace: true })
             })
             .catch(error => {
@@ -42,11 +42,13 @@ const Register = () => {
     }
 
     const handlerUpdateUserProfile = (name) => {
+        console.log(name);
         const profile = {
-            name: name,
+            displayName: name,
         }
+        console.log(profile);
         updateUser(profile)
-            .then(() => { })
+            .then(() => {})
             .catch(error => console.error(error))
 
     }

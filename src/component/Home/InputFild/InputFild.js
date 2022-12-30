@@ -18,7 +18,6 @@ const InputFild = () => {
 
 
     const handlerAddProduct = data => {
-        console.log(data)
         const image = data.image[0];
         const formData = new FormData();
         formData.append('image', image);
@@ -37,7 +36,7 @@ const InputFild = () => {
                         images: imgbb.data.url,
                         profileImg:data.profileImg
                     }
-                    fetch(`http://localhost:5000/inputFild`, {
+                    fetch(`https://social-mediya-server-side.vercel.app/inputFild`, {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
@@ -47,6 +46,7 @@ const InputFild = () => {
                         .then(res => res.json())
                         .then(result => {
                             toast.success(`Post added successfully`);
+                            data.reset();
 
                         })
                 }

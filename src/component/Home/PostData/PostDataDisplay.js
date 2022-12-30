@@ -1,30 +1,45 @@
-import React, { useEffect, useState } from 'react';
+import styled from 'daisyui/dist/styled';
+import React, { useContext, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { BiLike } from 'react-icons/bi';
 import { FaSadCry } from 'react-icons/fa';
 import { FiSend } from 'react-icons/fi';
 import { GiLoveMystery } from 'react-icons/gi';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthProvider';
 
 const PostDataDisplay = () => {
+    const { user } = useContext(AuthContext);
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [medias, setMedia] = useState([]);
     const [likeClick, setLikeClick] = useState(false);
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/inputFild`)
+        fetch(`https://social-mediya-server-side.vercel.app/inputFild`)
             .then(res => res.json())
             .then(data => setMedia(data))
     }, [])
 
-    const handlerAccept = event =>{
-        setLikeClick(event.target.value)
-    }
 
     const handelLogin = data => {
         console.log(data)
 
+    }
+
+
+    const [count, setCount] = useState(0);
+
+    const handlerLikeClick = (id) => {
+       if(!likeClick){
+        const counter = count + 1;
+        setCount(counter);
+       }
+    //    else{
+    //     const counter = count - 1;
+    //     setCount(counter);
+    //    }
+        setLikeClick(!likeClick);
     }
 
     return (
@@ -34,10 +49,10 @@ const PostDataDisplay = () => {
                     <div className='max-w-lg m-auto'>
                         <div className="flex flex-col  p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
                             <div className="flex space-x-4">
-                                <img alt="" src={media?.profileImg ? media?.profileImg : "https://source.unsplash.com/100x100/?portrait"} className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500" />
+                                <img alt="" src={media?.profileImg || user?.photoURL ? media?.profileImg || user?.photoURL : "N/I"} className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500" />
                                 <div className="flex flex-col space-y-1">
-                                    <Link rel="noopener noreferrer" href="#" className="text-sm font-semibold">{media?.name ? media?.name : 'Leroy Jenkins'}</Link>
-                                    <span className="text-xs dark:text-gray-400">{media?.job ? media?.job :'Android | Flutter | Sr. Software Engineer '} </span>
+                                    <Link rel="noopener noreferrer" href="#" className="text-sm font-semibold">{media?.name || user?.displayName ? media?.name || user?.displayName : 'name is null'}</Link>
+                                    <span className="text-xs dark:text-gray-400">{media?.job ? media?.job : 'Web Developer || React Developer ||'} </span>
                                 </div>
                             </div>
                             <div>
@@ -48,7 +63,7 @@ const PostDataDisplay = () => {
                                         <BiLike className='text-blue-800'></BiLike>
                                         <GiLoveMystery className='text-rose-500'></GiLoveMystery>
                                         <FaSadCry className='text-yellow-500'></FaSadCry>
-                                        <p className="text-sm mx-2">Md.Nayon and {media?.like ? media?.like : ''} others</p>
+                                        <p className="text-sm mx-2">Md.Nayon and {media?.like ? media?.like + count : ''} others</p>
                                     </div>
                                     <div>
                                         <p className="text-sm mx-2">{media?.comment ? media?.comment : ''} comments</p>
@@ -60,19 +75,13 @@ const PostDataDisplay = () => {
                             </div>
                             <div className="flex flex-wrap justify-between">
                                 <div className="flex space-x-2 text-sm dark:text-gray-400">
-                                    <button  type="button" className="flex items-center p-1 space-x-1.5">
-                                       { likeClick ?
-                                        <svg  onClick={() => setLikeClick()} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-label="Number of likes" className="w-5 h-5 border rounded-full bg-blue-500 fill-current dark:text-violet-400">
-                                        <path d="M126.638,202.672H51.986a24.692,24.692,0,0,0-24.242,19.434,487.088,487.088,0,0,0-1.466,206.535l1.5,7.189a24.94,24.94,0,0,0,24.318,19.78h74.547a24.866,24.866,0,0,0,24.837-24.838V227.509A24.865,24.865,0,0,0,126.638,202.672ZM119.475,423.61H57.916l-.309-1.487a455.085,455.085,0,0,1,.158-187.451h61.71Z"></path>
-                                        <path d="M494.459,277.284l-22.09-58.906a24.315,24.315,0,0,0-22.662-15.706H332V173.137l9.573-21.2A88.117,88.117,0,0,0,296.772,35.025a24.3,24.3,0,0,0-31.767,12.1L184.693,222.937V248h23.731L290.7,67.882a56.141,56.141,0,0,1,21.711,70.885l-10.991,24.341L300,169.692v48.98l16,16H444.3L464,287.2v9.272L396.012,415.962H271.07l-86.377-50.67v37.1L256.7,444.633a24.222,24.222,0,0,0,12.25,3.329h131.6a24.246,24.246,0,0,0,21.035-12.234L492.835,310.5A24.26,24.26,0,0,0,496,298.531V285.783A24.144,24.144,0,0,0,494.459,277.284Z"></path>
-                                    </svg>
-                                    :
-                                        <svg onClick={() => setLikeClick(`${media._id}`)} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-label="Number of likes" className="w-5 h-5 border rounded-full fill-current dark:text-violet-400">
+                                    <button type="button" className="flex items-center p-1 space-x-1.5">
+
+                                        <svg onClick={() => handlerLikeClick(`${media?._id}`)} style={{backgroundColor: likeClick? 'blue' : 'white'}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-label="Number of likes" className="w-5 h-5 border rounded-full  fill-current dark:text-violet-400">
                                             <path d="M126.638,202.672H51.986a24.692,24.692,0,0,0-24.242,19.434,487.088,487.088,0,0,0-1.466,206.535l1.5,7.189a24.94,24.94,0,0,0,24.318,19.78h74.547a24.866,24.866,0,0,0,24.837-24.838V227.509A24.865,24.865,0,0,0,126.638,202.672ZM119.475,423.61H57.916l-.309-1.487a455.085,455.085,0,0,1,.158-187.451h61.71Z"></path>
                                             <path d="M494.459,277.284l-22.09-58.906a24.315,24.315,0,0,0-22.662-15.706H332V173.137l9.573-21.2A88.117,88.117,0,0,0,296.772,35.025a24.3,24.3,0,0,0-31.767,12.1L184.693,222.937V248h23.731L290.7,67.882a56.141,56.141,0,0,1,21.711,70.885l-10.991,24.341L300,169.692v48.98l16,16H444.3L464,287.2v9.272L396.012,415.962H271.07l-86.377-50.67v37.1L256.7,444.633a24.222,24.222,0,0,0,12.25,3.329h131.6a24.246,24.246,0,0,0,21.035-12.234L492.835,310.5A24.26,24.26,0,0,0,496,298.531V285.783A24.144,24.144,0,0,0,494.459,277.284Z"></path>
                                         </svg>
 
-                                    }
                                     </button>
                                     <button type="button" className="flex items-center p-1 space-x-1.5">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-label="Number of comments" className="w-5 h-5 fill-current text-blue-900 ">
@@ -80,14 +89,14 @@ const PostDataDisplay = () => {
                                             <path d="M60.185,317.476a220.491,220.491,0,0,0,34.808-63.023l4.22-11.975-9.207-7.066C62.918,214.626,48,186.728,48,156.857,48,96.833,109.009,48,184,48c55.168,0,102.767,26.43,124.077,64.3,3.957-.192,7.931-.3,11.923-.3q12.027,0,23.834,1.167c-8.235-21.335-22.537-40.811-42.2-56.961C270.072,30.279,228.3,16,184,16S97.928,30.279,66.364,56.206C33.886,82.885,16,118.63,16,156.857c0,35.8,16.352,70.295,45.25,96.243a188.4,188.4,0,0,1-40.563,60.729L16,318.515V352H32a190.643,190.643,0,0,0,85.231-20.125,157.3,157.3,0,0,1-5.071-33.645A158.729,158.729,0,0,1,60.185,317.476Z"></path>
                                         </svg>
                                         <form onSubmit={handleSubmit(handelLogin)}>
-                                                <div className="w-full space-y-1">
-                                                    <div className="flex">
-                                                        <input type="text" name='comment'  {...register("comment",)} placeholder='comment' className="w-20 flex flex-1 px-2 border sm:text-sm rounded-l-md focus:outline-0 " />
-                                                        <span type="submit" value="submit" className="flex border items-center px-3 pointer-events-none sm:text-sm rounded-r-md dark:bg-gray-700">submit</span>
-                                                    </div>
-                                                    
+                                            <div className="w-full space-y-1">
+                                                <div className="flex">
+                                                    <input type="text" name='comment'  {...register("comment",)} placeholder='comment' className="w-20 flex flex-1 px-2 border sm:text-sm rounded-l-md focus:outline-0 " />
+                                                    <span type="submit" value="submit" className="flex border items-center px-3 pointer-events-none sm:text-sm rounded-r-md dark:bg-gray-700">submit</span>
                                                 </div>
-                                            </form>
+
+                                            </div>
+                                        </form>
                                     </button>
 
                                 </div>

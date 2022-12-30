@@ -24,7 +24,7 @@ const Footer = () => {
                                     <Link rel="noopener noreferrer" to='/home' className="hover:dark:text-violet-400">Home</Link>
                                 </li>
                                 <li>
-                                    <Link rel="noopener noreferrer" to='/topic' className="hover:dark:text-violet-400">Topic</Link>
+                                    <Link rel="noopener noreferrer" to='/topic' className="hover:dark:text-violet-400">Aboute</Link>
                                 </li>
 
                             </ul>
@@ -33,7 +33,7 @@ const Footer = () => {
                             <p className="pb-1 text-lg font-medium">Category Page</p>
                             <ul>
                                 <li>
-                                    <Link rel="noopener noreferrer" to='/static' className="hover:dark:text-violet-400">Static</Link>
+                                    <Link rel="noopener noreferrer" to='/static' className="hover:dark:text-violet-400">Message</Link>
                                 </li>
                                 <li>
                                     <Link rel="noopener noreferrer" to='/blog' className="hover:dark:text-violet-400">Blog</Link>

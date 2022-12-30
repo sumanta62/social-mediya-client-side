@@ -38,14 +38,9 @@ export const router = createBrowserRouter([
             {
                 path:'/mediaDetails/:id',
                 element: <MediaDetails></MediaDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/mediaDetails/${params.id}`)
+                loader: ({ params }) => fetch(`https://social-mediya-server-side.vercel.app/mediaDetails/${params.id}`)
             },
-            {
-                path:'/aboute/:id',
-                element: <EditAboute></EditAboute>,
-               
-            },
-            
+           
         ]
     }
 ])

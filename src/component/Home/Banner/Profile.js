@@ -15,12 +15,12 @@ const Profile = () => {
                                 <img src="https://media.licdn.com/dms/image/D5616AQEEav78awMa6w/profile-displaybackgroundimage-shrink_350_1400/0/1670502708064?e=1677715200&v=beta&t=MCqFbJxd8JoGB_xcH0Jli-FO15B-35FtuQenDtD_CiQ" alt="" className="object-cover w-full mb-4 dark:bg-gray-500" />
                             </div>
                             <div className='absolute'>
-                                <img src="https://media.licdn.com/dms/image/D5603AQEVhd-2WOOZjg/profile-displayphoto-shrink_200_200/0/1668929024867?e=1677715200&v=beta&t=wPpr4Q17jIW3Z93Oq7wGDedYRLjOjYW-kITo8s0B_-Q" alt="" className='w-16 rounded-full' />
+                                <img src={user?.photoURL ? user?.photoURL : "N/I"} alt="" className='w-16 h-16 border rounded-full' />
                             </div>
                         </div>
                     </div>
                     <div className='text-center'>
-                        <h2 className="mb-1 text-lg md:text-xl font-semibold  cursor-pointer">Sumanta Majumder</h2>
+                        <h2 className="mb-1 text-lg md:text-xl font-semibold cursor-pointer capitalize">{user?.displayName ? user?.displayName : "name is null"}</h2>
                         <p className="text-sm dark:text-gray-400">Web Developer || React Developer || JavaScript Developer</p>
                     </div>
                     <div className='mt-3'>

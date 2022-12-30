@@ -2,8 +2,8 @@ import React from 'react';
 
 const Cunnect = () => {
     return (
-        <div className=' w-md'>
-            <div className="flex flex-col cunnection m-auto md:m-0 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
+        <div className='w-md '>
+            <div className="hidden lg:flex flex-col cunnection m-auto md:m-0 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
                 <div>
                     <div className='text-center pt-3'>
                         <h2 className="mb-1 text-lg md:text-xl font-semibold text-blue-800 cursor-pointer">Connections</h2>

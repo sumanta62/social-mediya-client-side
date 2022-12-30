@@ -12,27 +12,36 @@ const Media = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [medias, setMedia] = useState([]);
     const { user, loading } = useContext(AuthContext);
-    console.log(user);
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-   
-    console.log(isMenuOpen);
-    if(loading){
-        <Spinner></Spinner>
-    }
+    const [likeClick, setLikeClick] = useState(false);
+    const [count, setCount] = useState(0);
+
 
     useEffect(() => {
-        fetch(`http://localhost:5000/inputFild`)
+        fetch(`https://social-mediya-server-side.vercel.app/inputFild`)
             .then(res => res.json())
             .then(data => setMedia(data))
     }, [])
 
-    // if(user.uid){
-    //     setIsMenuOpen(true)
-    // }
-
     const handelLogin = data => {
         console.log(data)
 
+    }
+
+
+    const handlerLikeClick = (id) => {
+       if(!likeClick){
+        const counter = count + 1;
+        setCount(counter);
+       }
+    //    else{
+    //     const counter = count - 1;
+    //     setCount(counter);
+    //    }
+        setLikeClick(!likeClick);
+    }
+
+    if (loading) {
+        <Spinner></Spinner>
     }
 
 
@@ -42,7 +51,7 @@ const Media = () => {
                 <h1 className="text-4xl font-bold pb-2 ">All Post</h1>
                 <p className='text-sm'>Here you can see the pictures and text of all the posts.</p>
             </div>
-            <div className="container w-10/12 py-14">
+            <div className="container mx-auto w-10/12 py-14">
 
                 <div className='mt-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 content-center gap-4 mr-0 ml-0 '>
                     {
@@ -50,10 +59,10 @@ const Media = () => {
 
                             <div className="flex flex-col max-w-sm p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
                                 <div className="flex space-x-4">
-                                    <img alt="" src={media?.profileImg ? media?.profileImg : "https://source.unsplash.com/100x100/?portrait"} className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500" />
+                                    <img alt="" src={media?.profileImg || user?.photoURL ? media?.profileImg || user?.photoURL : "N/I"} className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500" />
                                     <div className="flex flex-col space-y-1">
-                                        <Link rel="noopener noreferrer" href="#" className="text-sm font-semibold">{media?.name ? media?.name : 'Leroy Jenkins'}</Link>
-                                        <span className="text-xs dark:text-gray-400">{media?.job ? media?.job : 'Android | Flutter | Sr. Software Engineer '} </span>
+                                        <Link rel="noopener noreferrer" href="#" className="text-sm font-semibold">{media?.name || user?.displayName ? media?.name || user?.displayName : 'name is null'}</Link>
+                                        <span className="text-xs dark:text-gray-400">{media?.job ? media?.job : 'Web Developer || React Developer ||'} </span>
                                     </div>
                                 </div>
                                 <div>
@@ -64,7 +73,7 @@ const Media = () => {
                                             <BiLike className='text-blue-800'></BiLike>
                                             <GiLoveMystery className='text-rose-500'></GiLoveMystery>
                                             <FaSadCry className='text-yellow-500'></FaSadCry>
-                                            <p className="text-sm mx-1">Nayon and {media?.like ? media?.like : ''} others</p>
+                                            <p className="text-sm mx-1">Nayon and {media?.like ? media?.like + count : ''} others</p>
                                         </div>
                                         <div>
                                             <p className="text-sm mx-2">{media?.comment ? media?.comment : ''}        comments</p>
@@ -77,7 +86,7 @@ const Media = () => {
                                 <div className="flex flex-wrap justify-between">
                                     <div className="flex space-x-2 text-sm dark:text-gray-400">
                                         <button type="button" className="flex items-center p-1 space-x-1.5">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-label="Number of likes" className="w-4 h-4 fill-current dark:text-violet-400">
+                                            <svg onClick={() => handlerLikeClick(`${media?._id}`)} style={{backgroundColor: likeClick? 'blue' : 'white'}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-label="Number of likes" className="w-5 h-5 border rounded-full  fill-current dark:text-violet-400">
                                                 <path d="M126.638,202.672H51.986a24.692,24.692,0,0,0-24.242,19.434,487.088,487.088,0,0,0-1.466,206.535l1.5,7.189a24.94,24.94,0,0,0,24.318,19.78h74.547a24.866,24.866,0,0,0,24.837-24.838V227.509A24.865,24.865,0,0,0,126.638,202.672ZM119.475,423.61H57.916l-.309-1.487a455.085,455.085,0,0,1,.158-187.451h61.71Z"></path>
                                                 <path d="M494.459,277.284l-22.09-58.906a24.315,24.315,0,0,0-22.662-15.706H332V173.137l9.573-21.2A88.117,88.117,0,0,0,296.772,35.025a24.3,24.3,0,0,0-31.767,12.1L184.693,222.937V248h23.731L290.7,67.882a56.141,56.141,0,0,1,21.711,70.885l-10.991,24.341L300,169.692v48.98l16,16H444.3L464,287.2v9.272L396.012,415.962H271.07l-86.377-50.67v37.1L256.7,444.633a24.222,24.222,0,0,0,12.25,3.329h131.6a24.246,24.246,0,0,0,21.035-12.234L492.835,310.5A24.26,24.26,0,0,0,496,298.531V285.783A24.144,24.144,0,0,0,494.459,277.284Z"></path>
                                             </svg>
@@ -113,9 +122,16 @@ const Media = () => {
                                     </div>
                                 </div>
                                 <div className='flex justify-center mt-5'>
-                                    <Link to={`/mediaDetails/${media._id}`} disabled={!isMenuOpen}>
-                                        <button className='btn btn-info btn-sm w-full text-white' >Details</button>
-                                    </Link>
+                                  
+                                   { !user?.uid ?
+                                    <button className='btn btn-info btn-sm text-white' disabled>
+                                        <Link to={`/mediaDetails/${media._id}`} className="p-2" >Details </Link>
+                                    </button>
+                                    :
+                                    <button className='btn btn-info btn-sm text-white' >
+                                        <Link to={`/mediaDetails/${media._id}`} className="p-2" >Details </Link>
+                                    </button>
+                                    }
 
                                 </div>
                             </div>
