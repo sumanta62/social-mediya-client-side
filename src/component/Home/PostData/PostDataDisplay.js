@@ -1,4 +1,4 @@
-import styled from 'daisyui/dist/styled';
+
 import React, { useContext, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { BiLike } from 'react-icons/bi';

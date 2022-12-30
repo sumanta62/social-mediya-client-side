@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../context/AuthProvider';
+import ActivePage from './ActivePage';
 
 const Profile = () => {
     const {user} = useContext(AuthContext);
@@ -60,6 +61,11 @@ const Profile = () => {
                         </button>
                     </div>
 
+                </div>
+            </div>
+            <div className='mt-5'>
+                <div className='hidden md:flex md:flex-col mt-8 profile profile m-auto md:m-0 overflow-hidden rounded-lg shadow-md '>
+                    <ActivePage></ActivePage>
                 </div>
             </div>
         </div>

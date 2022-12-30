@@ -4,6 +4,7 @@ import Aboute from "../Home/Aboute/Aboute";
 import EditAboute from "../Home/Aboute/EditAboute";
 import HomePage from "../Home/Banner/HomePage";
 import Home from "../Home/Home/Home";
+import Message from "../Home/Message/Message";
 import Main from "../Layout/Main";
 import Media from "../Media/Media";
 import MediaDetails from "../Media/MediaDetails";
@@ -31,6 +32,10 @@ export const router = createBrowserRouter([
             {
                 path:'/media',
                 element: <Media></Media>,
+            },
+            {
+                path:'/message',
+                element: <Message></Message>,
             },
             {
                 path:'/login',

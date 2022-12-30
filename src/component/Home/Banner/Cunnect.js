@@ -26,7 +26,7 @@ const Cunnect = () => {
                     </div>
                     <div className='p-3 text-sm hover:bg-slate-300 cursor-pointer'>
                         <div className='flex gap-2'>
-                            <div className='avatar online w-12 h-12'>
+                            <div className='w-12 h-12'>
                                 <img src="https://media.licdn.com/dms/image/C5603AQEOEUPy4sq7jQ/profile-displayphoto-shrink_200_200/0/1648091003305?e=1677715200&v=beta&t=5bTmRRlG5HWXnrWm1_wBjjbYE5JZOvaIJ0AB9VebyI8" alt="" className='w-12 rounded-full' />
                             </div>
                             <div>

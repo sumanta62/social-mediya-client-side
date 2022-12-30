@@ -17,10 +17,10 @@ const Aboute = () => {
 
 
     return (
-        <div className=''>
-            <section  style={{ backgroundImage: `url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmVJV2ULOtbcxVr1WypNMXAuXrmYvXFVvfM0IsNK3VxUqSCJvIbpif-hSSme-atkV17nY&usqp=CAU)`, width:'100%', height:'auto' }}  className=" flex justify-center items-end pt-32 pb-20 bg-no-repeat bg-cover">
+        <div className='h-screen'>
+            <section  style={{ backgroundImage: `url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmVJV2ULOtbcxVr1WypNMXAuXrmYvXFVvfM0IsNK3VxUqSCJvIbpif-hSSme-atkV17nY&usqp=CAU)`, width:'100%', height:'screen' }}  className=" flex justify-center items-center h-screen bg-no-repeat bg-cover">
 
-                <div className="max-w-md items-end p-8 sm:flex sm:space-x-6 bg-sky-300">
+                <div className="max-w-md  items-end p-8 sm:flex sm:space-x-6 bg-sky-300">
                     <div className="flex-shrink-0 w-full mb-6 h-44 sm:h-32 sm:w-32 sm:mb-0">
                         <img src={user?.photoURL? user?.photoURL : "https://imagez.tmz.com/image/05/1by1/2022/12/15/05bf4f9059a5452ba8d0b7a2f7c44294_xl.jpg"} alt="" className="object-cover object-center w-full h-full rounded bg-gray-500" />
                     </div>

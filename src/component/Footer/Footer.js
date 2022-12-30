@@ -9,12 +9,10 @@ const Footer = () => {
                     <div className=" grid-cols-12 hidden md:flex w-full justify-between pt-9">
                         <div className="pb-6 col-span-full md:pb-0 md:col-span-6">
                             <Link rel="noopener noreferrer" href="#" className="flex justify-center space-x-3 md:justify-start">
-                                <div className="flex items-center justify-center w-12 h-12 rounded-full dark:bg-violet-400">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" className="flex-shrink-0 w-5 h-5 rounded-full dark:text-gray-900">
-                                        <path d="M18.266 26.068l7.839-7.854 4.469 4.479c1.859 1.859 1.859 4.875 0 6.734l-1.104 1.104c-1.859 1.865-4.875 1.865-6.734 0zM30.563 2.531l-1.109-1.104c-1.859-1.859-4.875-1.859-6.734 0l-6.719 6.734-6.734-6.734c-1.859-1.859-4.875-1.859-6.734 0l-1.104 1.104c-1.859 1.859-1.859 4.875 0 6.734l6.734 6.734-6.734 6.734c-1.859 1.859-1.859 4.875 0 6.734l1.104 1.104c1.859 1.859 4.875 1.859 6.734 0l21.307-21.307c1.859-1.859 1.859-4.875 0-6.734z"></path>
-                                    </svg>
+                                <div className="flex items-center justify-center w-6 h-6 rounded-full dark:bg-violet-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><g fill="#1976D2"><path d="M0 5h3.578v11H0zM13.324 5.129c-.038-.012-.074-.025-.114-.036a2.32 2.32 0 0 0-.145-.028A3.207 3.207 0 0 0 12.423 5c-2.086 0-3.409 1.517-3.845 2.103V5H5v11h3.578v-6s2.704-3.766 3.845-1v7H16V8.577a3.568 3.568 0 0 0-2.676-3.448z"/><circle cx="1.75" cy="1.75" r="1.75"/></g></svg>
                                 </div>
-                                <span className="self-center text-2xl font-semibold">Social Media</span>
+                                <span className="self-center text-2xl font-semibold">Linkedin-Id</span>
                             </Link>
                         </div>
                         <div className="col-span-6 text-center md:text-left md:col-span-3">
@@ -44,6 +42,9 @@ const Footer = () => {
                     </div>
                     <div className="justify-center pb-6 lg:justify-between">
                         <div className="flex justify-center pt-4 space-x-4 lg:pt-0 lg:col-end-13">
+                            <Link rel="noopener noreferrer" href="#" title="Email" className="flex items-center justify-center w-10 h-10 rounded-full dark:bg-violet-400 dark:text-gray-900">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" className='w-5 h-5 '><g fill="currentColor"><path d="M0 5h3.578v11H0zM13.324 5.129c-.038-.012-.074-.025-.114-.036a2.32 2.32 0 0 0-.145-.028A3.207 3.207 0 0 0 12.423 5c-2.086 0-3.409 1.517-3.845 2.103V5H5v11h3.578v-6s2.704-3.766 3.845-1v7H16V8.577a3.568 3.568 0 0 0-2.676-3.448z"/><circle cx="1.75" cy="1.75" r="1.75"/></g></svg>
+                            </Link>
                             <Link rel="noopener noreferrer" href="#" title="Email" className="flex items-center justify-center w-10 h-10 rounded-full dark:bg-violet-400 dark:text-gray-900">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
                                     <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
