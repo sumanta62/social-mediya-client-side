@@ -10,10 +10,11 @@ const Aboute = () => {
     const { user } = useContext(AuthContext)
 
     useEffect(() => {
-        fetch(`https://social-mediya-server-side.vercel.app/aboute`)
+        fetch(`https://social-mediya-server-side.vercel.app/abouteUser`)
             .then(res => res.json())
             .then(data => SetAbouteUser(data))
     }, [])
+    console.log(abouteUser);
 
 
     return (
