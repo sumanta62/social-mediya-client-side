@@ -73,7 +73,7 @@ const Media = () => {
                                             <BiLike className='text-blue-800'></BiLike>
                                             <GiLoveMystery className='text-rose-500'></GiLoveMystery>
                                             <FaSadCry className='text-yellow-500'></FaSadCry>
-                                            <p className="text-sm mx-1">Nayon and {media?.like ? media?.like + count : ''} others</p>
+                                            <p className="text-sm mx-1">Nayon and {media?.like ? media?.like + count : count } others</p>
                                         </div>
                                         <div>
                                             <p className="text-sm mx-2">{media?.comment ? media?.comment : ''}        comments</p>

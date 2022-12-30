@@ -50,13 +50,13 @@ const MediaDetails = () => {
                         </div>
                         <div>
                             <p className='text-sm mb-2'>{mediaDetails.description ? mediaDetails.description : "No message"}</p>
-                            <img src={mediaDetails.images ? mediaDetails.images : ''} alt="" className="object-cover w-full mb-4 max-h-36 dark:bg-gray-500" />
+                            <img src={mediaDetails.images ? mediaDetails.images : ''} alt="" className="object-cover w-full mb-4  dark:bg-gray-500" />
                             <div className='flex justify-between'>
                                 <div className='flex cursor-pointer items-center'>
                                     <BiLike className='text-blue-800'></BiLike>
                                     <GiLoveMystery className='text-rose-500'></GiLoveMystery>
                                     <FaSadCry className='text-yellow-500'></FaSadCry>
-                                    <p className="text-sm mx-2">Md.Nayon and {mediaDetails.like ? mediaDetails.like + count : ''} others</p>
+                                    <p className="text-sm mx-2">Md.Nayon and {mediaDetails.like ? mediaDetails.like + count : count } others</p>
                                 </div>
                                 <div>
                                     <p className="text-sm mx-2">{mediaDetails.comment ? mediaDetails.comment : ''} comments</p>

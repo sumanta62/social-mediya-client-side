@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import Aboute from "../Home/Aboute/Aboute";
 import EditAboute from "../Home/Aboute/EditAboute";
+import HomePage from "../Home/Banner/HomePage";
 import Home from "../Home/Home/Home";
 import Main from "../Layout/Main";
 import Media from "../Media/Media";
@@ -18,6 +19,10 @@ export const router = createBrowserRouter([
             {
                 path:'/',
                 element: <Main></Main>,
+            },
+            {
+                path:'/',
+                element: <HomePage></HomePage>,
             },
             {
                 path:'/aboute',
